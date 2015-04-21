@@ -1,3 +1,6 @@
+/*Author: Daniel Jackson
+pset1
+*/
 import java.util.Scanner;
 
 public class Mario{
