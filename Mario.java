@@ -20,8 +20,7 @@ public class Mario{
 		//We should now have an int between 0 and 23 stored as n.
 		for(int i = 0; i < n; i++){
 			
-			String level;
-			level = "";
+			StringBuilder levelBuilder = new StringBuilder();
 			
 			int spaces;
 			spaces = (n - 1) - i;
@@ -30,16 +29,16 @@ public class Mario{
 			hashes = i + 2;
 			
 			while(spaces > 0){
-				level = level + " ";
+				levelBuilder.append(" ");
 				spaces = spaces - 1;
 			}
 			
 			while(hashes > 0){
-				level = level + "#";
+				levelBuilder.append("#");
 				hashes = hashes - 1;
 			}
 			
-			System.out.println(level);
+			System.out.println(levelBuilder.toString());
 		}
 	}
 }
