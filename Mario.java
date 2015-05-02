@@ -1,15 +1,17 @@
 /*Author: Daniel Jackson
 pset1
 */
+import java.io.File;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class Mario{
 	
-	public static void main(String[] args){
+	public static void main(String[] args) throws IOException {
 		
 		Scanner user_input = new Scanner(System.in);
-		PrintWriter mariofile = new PrintWriter("Mario.txt");
+		PrintWriter printWriter = new PrintWriter("Mario.txt");
 		
 		int n;
 		System.out.print("Enter a number between 0 and 23: ");
@@ -25,7 +27,7 @@ public class Mario{
 		System.out.print("Enter 1 for console output or 2 for .txt file output: ");
 		outputtype = Integer.parseInt(user_input.next());
 
-		while(outputtype != 1 || outputtype != 2){
+		while(outputtype != 1 && outputtype != 2){
 			System.out.print("Please enter 1 for console output or 2 for .txt file output: ");
 			outputtype = Integer.parseInt(user_input.next());
 		}
@@ -75,8 +77,9 @@ public class Mario{
 					hashes = hashes - 1;
 				}
 
-				mariofile.println(levelBuilder.toString());
+				printWriter.println(levelBuilder.toString());
 			}
+			printWriter.close();
 		}
 	}
 }
