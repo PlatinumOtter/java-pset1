@@ -3,9 +3,9 @@
  */
 public class Pyramid {
 
-    public static String thePyramid;
+    private String thePyramid;
 
-    public static void main(int n) {
+    public void builder(int n) {
         StringBuilder levelBuilder = new StringBuilder();
 
         for (int i = 0; i < n; i++) {
@@ -29,5 +29,9 @@ public class Pyramid {
             levelBuilder.append("\n");
         }
         thePyramid = levelBuilder.toString();
+    }
+
+    public java.lang.String toString() {
+        return thePyramid;
     }
 }

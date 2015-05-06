@@ -21,8 +21,8 @@ public class Mario {
             n = Integer.parseInt(user_input.next());
         }
         //We should now have an int between 0 and 23 stored as n and we can use the Pyramid class to build our pyramid.
-        Pyramid.main(n);
-        String theString = Pyramid.thePyramid;
+        Pyramid theLevel = Egyptians.creation(n);
+        String theString = theLevel.toString();
 
         int outputType;
         System.out.print("Enter 1 for console output or 2 for .txt file output: ");
@@ -35,7 +35,7 @@ public class Mario {
 
         if(outputType == 1){
             System.out.print(theString);
-        }else {
+        } else {
             printWriter.print(theString);
             printWriter.close();
             System.out.println("Mario printed to Mario.txt");
