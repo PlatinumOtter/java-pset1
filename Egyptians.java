@@ -3,7 +3,18 @@
  */
 public class Egyptians {
 
-    public static Pyramid creation(int n){
+    private Egyptians(){}
+
+    private static Egyptians egyptians;
+
+    public static Egyptians getInstance(){
+        if(egyptians == null){
+            egyptians =  new Egyptians();
+        }
+        return egyptians;
+    }
+
+    public Pyramid creation(int n){
         Pyramid giza = new Pyramid();
         giza.builder(n);
         return giza;
