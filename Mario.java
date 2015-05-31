@@ -13,7 +13,7 @@ public class Mario {
         this.egyptians = egyptians;
     }
 
-    public void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException {
 
         Scanner user_input = new Scanner(System.in);
         PrintWriter printWriter = new PrintWriter("Mario.txt"); //Will throw IOException, need file in source directory.
@@ -27,7 +27,7 @@ public class Mario {
             n = Integer.parseInt(user_input.next());
         }
         //We should now have an int between 0 and 23 stored as n and we can use the Pyramid class to build our pyramid.
-        Pyramid theLevel = egyptians.creation(n);
+        Pyramid theLevel = Egyptians.getInstance().creation(n);
 
         int outputType;
         System.out.print("Enter 1 for console output or 2 for .txt file output: ");
