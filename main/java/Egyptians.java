@@ -1,5 +1,5 @@
 /**
- * Created by danie_000 on 5/6/2015.
+ * Created by Daniel Jackson on 5/6/2015.
  */
 public class Egyptians {
 
