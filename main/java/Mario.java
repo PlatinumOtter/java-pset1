@@ -1,22 +1,34 @@
-import java.io.IOException;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
 /**
- * Created by danie_000 on 5/4/2015.
+ * Created by Daniel Jackson on 5/4/2015.
  */
 public class Mario {
 
-    private Egyptians egyptians;
+    private Egyptians egyptian;
 
-    public Mario(Egyptians egyptians){
-        this.egyptians = egyptians;
+    public Mario(Egyptians egyptian) {
+        this.egyptian = egyptian;
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws FileNotFoundException {
+
+        ApplicationContext context = new ClassPathXmlApplicationContext("application.xml");
+
+        Mario obj = (Mario) context.getBean("mario1");
+        obj.runIt();
+    }
+
+    public static void runIt() throws FileNotFoundException {
 
         Scanner user_input = new Scanner(System.in);
-        PrintWriter printWriter = new PrintWriter("Mario.txt"); //Will throw IOException, need file in source directory.
+        //Will throw Exception, need file in source directory.
+        PrintWriter printWriter = new PrintWriter("Mario.txt");
 
         int n;
         System.out.print("Enter a number between 0 and 23: ");
